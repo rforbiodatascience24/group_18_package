@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 library(biodogma)
 ```
 
+### Github repo: <https://github.com/rforbiodatascience24/group_18_package>
+
 # Package Description:
 
 This R package provides tools for nucleotide sequence analysis, specifically designed to facilitate basic genetic and genomic research tasks. Key functions include the ability to split nucleotide sequences into codons—triplets that form the building blocks of genes—allowing users to investigate different reading frames or codon compositions within sequences. Additionally, the package includes a function to analyze and visualize nucleotide frequency distributions in a given sequence, creating quick insights into nucleotide composition through bar plots. These functionalities support the exploration of genetic sequence structure and nucleotide distribution patterns, making the package useful for bioinformatics, molecular biology, and computational genomics projects.
