@@ -2,7 +2,7 @@ Package: biodogma
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
-Author: 
+Author: group_18
 Authors@R:
   c(person(given = "firstname",
            family = "lastname",
@@ -21,3 +21,9 @@ LazyData: true
 Depends: 
     R (>= 2.10)
 RoxygenNote: 7.3.2
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
