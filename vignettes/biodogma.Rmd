@@ -17,3 +17,74 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(biodogma)
 ```
+
+# Package Description:
+
+This R package provides tools for nucleotide sequence analysis, specifically designed to facilitate basic genetic and genomic research tasks. Key functions include the ability to split nucleotide sequences into codons—triplets that form the building blocks of genes—allowing users to investigate different reading frames or codon compositions within sequences. Additionally, the package includes a function to analyze and visualize nucleotide frequency distributions in a given sequence, creating quick insights into nucleotide composition through bar plots. These functionalities support the exploration of genetic sequence structure and nucleotide distribution patterns, making the package useful for bioinformatics, molecular biology, and computational genomics projects.
+
+## Function Description and demonstration
+
+1.  `random_dna_seq()` : This functions allows you to create a random DNA sequence of any length
+
+```{r}
+random_dna_seq(20) # Prints a 20 lenfth DNA sequence
+```
+
+2.  `split_to_codons()` :
+
+    This function splits a nucleotide sequence string into codons, groups of three consecutive characters, which are fundamental units in gene translation. By default, it begins with the first character in the sequence, but you can specify a custom start position to adjust the reading frame.
+
+    Parameters:
+
+    `sequence`: A character string representing the nucleotide sequence to split. •⁠ ⁠start: The starting position within the string from which to start forming codons. Defaults to 1, indicating that codon formation begins with the first character.
+
+    Returns: A character vector containing codons, each a 3-character substring derived from the input sequence.
+
+```{r}
+split_to_codons("ATGCGTACG") # Returns: "ATG" "CGT" "ACG"
+split_to_codons("GTCAGTCTTAG", start = 2) # Returns: "TCA" "GTC" "TAG"
+
+```
+
+3.  `DNA_to_RNA(dna_seq)` : Primitive function to translate DNA into RNA by replacing T with U
+
+    `dna_seq`: A character string representing the DNA Nucleotides
+
+    Return: A character string representing the RNA Nucleotides
+
+```{r}
+DNA_to_RNA("ATCGTTG")
+
+```
+
+4.  `string_codons(codons)` :This function converts a vector of codons into a single amino acid sequence based on the codon table
+
+    `codons`: A vector of codon identifiers
+
+    Returns: A single string of amino acid characters representing the combined sequence
+
+```{r}
+
+# Define codon lookup table
+codon_table <- c("AUG" = "M", "UUU" = "F", "GGA" = "G")
+# Call the function
+string_codons(c("AUG", "UUU", "GGA"))
+# Output: "MFG"
+
+
+```
+
+5.  `plot_frequencies()` :
+
+    This function computes the frequency of each unique nucleotide in a sequence string and produces a bar plot to visualize these counts. This can be particularly useful for examining nucleotide composition and distribution within a sequence.
+
+    Parameters:
+
+    `sequence_str` : A character string representing the nucleotide sequence to split.
+
+    Returns: A ggplot2 object, specifically a bar plot, showing the frequency of each nucleotide found in the sequence.
+
+```{r}
+plot_frequencies("AGTCAGTC") # Returns a bar plot showing counts for each nucleotide
+
+```
