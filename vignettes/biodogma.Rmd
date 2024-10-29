@@ -1,6 +1,6 @@
 ---
 title: "biodogma"
-output: rmarkdown::pdf_document
+output: rmarkdown::pdf_document 
 vignette: >
   %\VignetteIndexEntry{biodogma}
   %\VignetteEngine{knitr::rmarkdown}
@@ -38,7 +38,7 @@ random_dna_seq(20) # Prints a 20 lenfth DNA sequence
 
     Parameters:
 
-    `sequence`: A character string representing the nucleotide sequence to split. •⁠ ⁠start: The starting position within the string from which to start forming codons. Defaults to 1, indicating that codon formation begins with the first character.
+    `sequence`: A character string representing the nucleotide sequence to split. • start: The starting position within the string from which to start forming codons. Defaults to 1, indicating that codon formation begins with the first character.
 
     Returns: A character vector containing codons, each a 3-character substring derived from the input sequence.
 
